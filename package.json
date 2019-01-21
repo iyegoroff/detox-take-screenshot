@@ -1,6 +1,6 @@
 {
   "name": "detox-take-screenshot",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A tiny hack to enable screenshot taking inside detox tests",
   "main": "index.js",
   "scripts": {
