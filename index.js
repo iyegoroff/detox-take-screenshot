@@ -7,13 +7,11 @@ const read = promisify(readFile)
 
 const devicePathBuilder = new AndroidDevicePathBuilder()
 
-const isIos = () => device._deviceConfig.type.startsWith('ios')
-
 const screenshot = async () => {
   const { deviceDriver: { adb, _applesimutils: appleSimUtils }, _deviceId: deviceId } = device
   const temp = tempfile('.png')
 
-  if (isIos()) {
+  if (device.getPlatform() === 'ios') {
     await appleSimUtils.takeScreenshot(deviceId, temp)
   } else {
     const pathToScreenshotOnDevice = devicePathBuilder.buildTemporaryArtifactPath('.png')
@@ -26,6 +24,4 @@ const screenshot = async () => {
   return read(temp)
 }
 
-const identifier = (name) => `${isIos() ? 'ios' : 'android'}-${name}`
-
-module.exports = { screenshot, identifier }
+module.exports = screenshot
