@@ -14,5 +14,13 @@
   "license": "MIT",
   "peerDependencies": {
     "detox": ">=10.0.2"
+  },
+  "bugs": {
+    "url": "https://github.com/iyegoroff/detox-take-screenshot/issues"
+  },
+  "homepage": "https://github.com/iyegoroff/detox-take-screenshot#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iyegoroff/detox-take-screenshot.git"
   }
 }
