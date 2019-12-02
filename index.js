@@ -8,7 +8,7 @@ const read = promisify(readFile)
 const devicePathBuilder = new AndroidDevicePathBuilder()
 
 const screenshot = async () => {
-  const { deviceDriver: { adb, _applesimutils: appleSimUtils }, _deviceId: deviceId } = device
+  const { deviceDriver: { adb, applesimutils: appleSimUtils }, _deviceId: deviceId } = device
   const temp = tempfile('.png')
 
   if (device.getPlatform() === 'ios') {
